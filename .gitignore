@@ -1,0 +1,12 @@
+# Visual Studio
+.vs/
+*.user
+*.slnLaunch.user
+
+# .NET build outputs
+bin/
+obj/
+publish/
+
+# NuGet
+packages/

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>UMP_CLI</RootNamespace>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>ump</ToolCommandName>
+		<!-- Назва команди в терміналі -->
+		<PackageId>UMP-CLI</PackageId>
+		<!-- Явно вказуємо PackageId -->
+		<Version>1.0.0</Version>
+		<!-- Вказуємо версію -->
+		<PackageOutputPath>./publish</PackageOutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.CommandLine" Version="2.0.0-beta4.22272.1" />
+	</ItemGroup>
+
+</Project>
