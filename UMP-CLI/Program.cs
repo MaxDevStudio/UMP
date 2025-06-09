@@ -122,10 +122,10 @@ class Program
 }
 
 // Клас для десеріалізації відповіді логіну
-class LoginResponse { public string token { get; set; } } // Поле "token" збігається з JSON
+class LoginResponse { public required string token { get; set; } } // Поле "token" збігається з JSON
 
 // Клас для десеріалізації помилок
-class ErrorResponse { public string Message { get; set; } }
+class ErrorResponse { public required string Message { get; set; } }
 
 // Клас для десеріалізації конфігурації (змінено на "token")
-class Config { public string token { get; set; } } // Змінено на "token" замість "Token"
+class Config { public required string token { get; set; } } // Змінено на "token" замість "Token"

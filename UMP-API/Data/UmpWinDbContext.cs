@@ -18,8 +18,8 @@ namespace UMP_API.Data // Простір імен для організації 
     public class User
     {
         public int Id { get; set; } // Унікальний ідентифікатор (автоінкремент)
-        public string Username { get; set; } // Ім'я користувача
-        public string PasswordHash { get; set; } // Хеш пароля
-        public string Role { get; set; } // Роль користувача
+        public required string Username { get; set; } // Ім'я користувача
+        public required string PasswordHash { get; set; } // Хеш пароля
+        public required string Role { get; set; } // Роль користувача
     }
 }

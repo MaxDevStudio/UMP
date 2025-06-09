@@ -61,7 +61,7 @@ namespace UMP_API.Controllers // Простір імен для контроле
     // Клас для десеріалізації тіла запиту логіну
     public class LoginRequest
     {
-        public string Username { get; set; } // Ім'я користувача
-        public string Password { get; set; } // Пароль
+        public required string Username { get; set; } // Ім'я користувача
+        public required string Password { get; set; } // Пароль
     }
 }
