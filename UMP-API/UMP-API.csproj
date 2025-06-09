@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" /> <!-- Swagger для документації -->
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" /> <!-- JWT-авторизація -->
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.5" /> <!-- JWT-авторизація -->
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" /> <!-- Підтримка PostgreSQL -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" /> <!-- Інструменти для міграцій -->
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" /> <!-- Хешування паролів -->
