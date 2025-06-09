@@ -29,6 +29,7 @@
      dotnet ef database update
      dotnet run      
   4. У папці `UMP-CLI` виконай:
+     ```bash
     dotnet run -- login --username testuser --password testpass
     dotnet run -- market list
 
