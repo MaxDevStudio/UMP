@@ -24,15 +24,16 @@
   1. Переконайся, що .NET 8 SDK встановлено.
   2. Налаштуй PostgreSQL і онови `ConnectionString` у `UMP-API/appsettings.json`.
   3. У папці `UMP-API` виконай:
-     ```bash
-     dotnet restore
-     dotnet ef database update
-     dotnet run      
-  4. У папці `UMP-CLI` виконай:
-     ```bash
-    dotnet run -- login --username testuser --password testpass
-    dotnet run -- market list
-
+     ```
+      dotnet restore
+      dotnet ef database update
+      dotnet run
+	 ```
+  1. 4. У папці `UMP-CLI` виконай:
+       ``` 
+      dotnet run -- login --username testuser --password testpass
+      dotnet run -- market list
+     ```
    - **Примітки для розробників**:
 
 Код відкритий для технічних дискусій і вдосконалень.
