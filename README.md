@@ -21,16 +21,16 @@
   - Токен зберігається в `~/.ump/config.json` після логіну.
 
 - **Як запустити**:
-  1. Переконайся, що .NET 8 SDK встановлено.
-  2. Налаштуй PostgreSQL і онови `ConnectionString` у `UMP-API/appsettings.json`.
-  3. У папці `UMP-API` виконай:
+1. Переконайся, що .NET 8 SDK встановлено.
+2. Налаштуй PostgreSQL і онови `ConnectionString` у `UMP-API/appsettings.json`.
+3. У папці `UMP-API` виконай:
      ```
       dotnet restore
       dotnet ef database update
       dotnet run
 	 ```
-  4. У папці `UMP-CLI` виконай:
-       ``` 
+4. У папці `UMP-CLI` виконай:
+      ``` 
       dotnet run -- login --username testuser --password testpass
       dotnet run -- market list
      ```
