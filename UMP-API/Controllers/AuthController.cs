@@ -37,8 +37,14 @@ namespace UMP_API.Controllers // Простір імен для контроле
 
             // Отримуємо налаштування JWT із конфігурації
             var jwtSettings = _configuration.GetSection("Jwt");
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256); // Налаштовуємо підпис
+            var key = jwtSettings["Key"];
+            if (string.IsNullOrEmpty(key))
+            {
+                return StatusCode(500, "Конфігурація JWT-ключа відсутня або порожня");
+            }
+            // Новий рядок: Змінна key витягується окремо для перевірки
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key!)); // Новий рядок: Додано ! для примусового зняття null
+            var creds = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256); // Налаштовуємо підпис
 
             // Створюємо JWT-токен
             var token = new JwtSecurityToken(

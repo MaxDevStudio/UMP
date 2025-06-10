@@ -1,7 +1,8 @@
+using System.Text; // Бібліотека для роботи з текстом
 using Microsoft.AspNetCore.Authentication.JwtBearer; // Бібліотека для JWT-авторизації
 using Microsoft.EntityFrameworkCore; // Бібліотека для роботи з базою даних через EF Core
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens; // Бібліотека для створення і перевірки JWT
-using System.Text; // Бібліотека для роботи з текстом
 using UMP_API.Data; // Простір імен для контексту бази даних
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,8 +33,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateIssuerSigningKey = true, // Перевіряємо підпис токена
             ValidIssuer = jwtSettings["Issuer"], // Встановлюємо видавача токена
             ValidAudience = jwtSettings["Audience"], // Встановлюємо аудиторію токена
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"])) // Секретний ключ для підпису
-        };
+            IssuerSigningKey = new // Секретний ключ для підпису
+            SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]!)) // Додано !
+         };
     });
 
 var app = builder.Build();
